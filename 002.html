@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            vertical-align: bottom;
+        }
+        .footer{
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .item-group{
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .banner img{
+            width: 100%;
+
+        }
+        .titel{
+          margin:0 0px 20px;
+          padding: 30px 10px;
+          background-color: #aaa;
+        }
+        .titel h2{
+            text-align: center;
+            font-size: 46px;
+        }
+        .titel p{
+            font-size: 22px;
+            text-align: center;
+        }
+        .item{
+            margin: 20px 10px 20px;
+            
+        }
+        .item .text h3{
+            font-size: 24px;
+            text-align: center;
+
+        }    
+        .item .pic img{
+            width: 100%;
+            
+        }
+        .service{
+            margin: 40px 0 ;
+            background-color: #ffa;
+        }
+        @media screen and (min-width:768px) {
+            .item-group{
+                display: flex;
+            }
+            .service .item{
+                display: flex;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width: 50%;
+                margin: 0;
+            }
+            .service .item .text{
+                display: flex;
+                padding: 0 20px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        }
+        /* .item-group{
+            display: flex;
+
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="https://picsum.photos/1400/500?random=1_" alt="">
+    </div>
+
+    <div class="about">
+        <div class="wrap">
+            <div class="titel">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, vitae laudantium? Temporibus 
+                    laborum obcaecati impedit sapiente. Aliquid aliquam soluta ea.</p>
+                </div>
+
+             <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=2_" alt="">
+                    </div>   
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae! Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe
+                    beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=3_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=4_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                    </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=8_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <div class="service">
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=5_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+        </div>
+    </div>
+        
+    
+
+
+
+    
+
+
+
+    <div class="about">
+        <div class="wrap">
+            <div class="titel">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, vitae laudantium? Temporibus 
+                    laborum obcaecati impedit sapiente. Aliquid aliquam soluta ea.</p>
+                </div>
+             <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=6_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae! Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe
+                    beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=7_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=8_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">
+    &copy;copygight 2022by csscoke
+</div>
+
+
+    
+</body>
+</html>

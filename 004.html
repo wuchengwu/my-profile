@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            vertical-align: bottom;
+        }
+        .footer{
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .item-group{
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .banner img{
+            width: 100%;
+
+        }
+        .titel{
+          margin:0 0px 20px;
+          padding: 30px 10px;
+          background-color: #aaa;
+        }
+        .titel h2{
+            text-align: center;
+            font-size: 46px;
+        }
+        .titel p{
+            font-size: 22px;
+            text-align: center;
+        }
+        .item{
+            margin: 20px 10px 20px;
+            
+        }
+        .item .text h3{
+            font-size: 24px;
+            text-align: center;
+
+        }    
+        .item .pic img{
+            width: 100%;
+            
+        }
+        .service{
+            margin: 40px 0 ;
+            background-color: #ffa;
+        }
+        @media screen and (min-width:768px) {
+            .item-group{
+                display: flex;
+            }
+            .service .item{
+                display: flex;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width: 50%;
+                margin: 0;
+            }
+            .service .item .text{
+                display: flex;
+                padding: 0 20px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        }
+        /* .item-group{
+            display: flex;
+
+        } */
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #menu_control{
+            position: absolute;
+            z-index: 2;
+            opacity: 0;
+        }
+        .header{
+            background-color: #666;
+            height: 50px;
+            position: relative;
+        }
+        .logo{    
+           margin-left:  10px;
+          
+
+        }
+        .logo img{
+            vertical-align: middle;
+            width: 60px;
+            height: 40px;
+        }
+        .menu_btn{
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            top:5px;
+            right: 10px;
+        }
+        .menu_btn span{
+            opacity: 0;
+            /* 影藏code */
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+            /* 超過範圍影藏 */
+
+        }
+        .menu_btn::before{
+            content:'';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #aaa;
+            top: 0;
+            bottom:0px;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaa,
+                        0px -8px 0px #aaa;
+        }
+        nav{
+            width: 80%;
+            height: calc(100vh - 50px);
+            background-color: #fcc;
+            position: absolute;
+            top: 50px;
+            left: -100% ;
+        }
+        nav a{ 
+            display: block;
+            text-decoration: none;
+            color: rgb(27, 179, 123);
+            padding: 10px 20px;
+            border-bottom:1px solid rgb(22,179,123) ;
+        }
+        #menu_control:checked ~ .header nav{
+            /* 選取到打勾才出現 */
+            left: 0;
+        }
+        @media screen and (min-width:768px){
+            .menu_btn{display: none;}
+            .header{
+                display: flex;
+                justify-content: space-between;
+                background-color: #666;
+                align-items: center;
+
+            }
+            .logo{
+                margin-bottom: 10px;
+            }
+            nav{
+                position: relative;
+                display: flex;
+                left: 0;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color:transparent;
+            }
+            nav a{
+                border-bottom:none ;
+                
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="menu_control">
+    <!-- 遠處控制打勾不打勾 -->
+
+    <div class="header">
+        <h1 class="logo">
+            <a href=""><img src="data:image/jpeg;base64,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" alt="">
+            </a>
+        </h1>
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="" #="">link</a>
+            <a href="" #="">link</a>
+            <a href="" #="">link</a>
+            <a href="" #="">link</a>
+            <a href="" #="">link</a>
+            <a href="" #="">link</a>
+        </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="banner">
+        <img src="https://picsum.photos/1400/500?random=1_" alt="">
+    </div>
+
+    <div class="about">
+        <div class="wrap">
+            <div class="titel">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, vitae laudantium? Temporibus 
+                    laborum obcaecati impedit sapiente. Aliquid aliquam soluta ea.</p>
+                </div>
+
+             <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=2_" alt="">
+                    </div>   
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae! Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe
+                    beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=3_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=4_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                    </p></div>
+            </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=8_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <div class="service">
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=5_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+        </div>
+    </div>
+        
+    
+
+
+
+    
+
+
+
+    <div class="about">
+        <div class="wrap">
+            <div class="titel">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, vitae laudantium? Temporibus 
+                    laborum obcaecati impedit sapiente. Aliquid aliquam soluta ea.</p>
+                </div>
+             <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=6_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae! Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe
+                    beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=7_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200?random=8_" alt="">
+                    </div>
+                    <div class="text">
+                    <h3>titel</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, consectetur. Amet veniam quisquam libero praesentium dolor dolorum ipsam excepturi tempora aperiam repellendus exercitationem quidem maxime reiciendis nam, officiis quis obcaecati.
+                    Nisi possimus tenetur, ipsam iusto veritatis non expedita officiis voluptatem molestias error quibusdam beatae sint reiciendis distinctio, fugiat eaque, hic dolorum nostrum doloribus corporis odit repudiandae animi? Nihil, accusamus maxime?
+                    Animi ex nam minus, reprehenderit illum laudantium numquam, optio labore voluptatem, asperiores temporibus dolorem inventore. Deleniti, consequuntur laborum voluptas vitae dolore neque. Nihil delectus animi ex est? Illum, adipisci sit?
+                    Illum aliquam autem laborum, iste itaque unde ducimus ipsam dicta. Sunt maxime est hic. Aliquid quasi voluptates ipsum soluta repellendus! Vel incidunt maiores aperiam reiciendis consequuntur optio in aliquid pariatur!
+                    Excepturi eum beatae commodi velit et dicta sit quibusdam rem id, animi suscipit fugit aliquid aliquam accusamus ipsam dolorem adipisci voluptas perferendis distinctio odit laborum minus voluptate molestias vero. Ratione.
+                    Debitis molestiae nulla quidem atque suscipit, consequatur itaque dicta voluptatem dolores ipsum nam similique? Exercitationem sunt amet cupiditate. Culpa expedita maiores nisi. Officia ab mollitia, vero sit voluptatem blanditiis molestiae!
+                    Similique officiis alias consectetur reprehenderit eaque neque ipsa in, commodi saepe beatae, dicta animi ad ipsam illum aut. Assumenda facere voluptas amet eaque asperiores itaque ea eos sit eveniet animi.
+                    Corrupti harum alias rem, aperiam exercitationem ipsa dolorum veniam temporibus ab in quod. Aperiam laboriosam praesentium sit eveniet. Id consequatur magni perspiciatis ab voluptate recusandae nemo inventore ut exercitationem in!
+                </p></div>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">
+    &copy;copygight 2022by csscoke
+</div>
+
+
+    
+</body>
+</html>
